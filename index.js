@@ -11,7 +11,7 @@ const port = 3000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: 'https://construccioneshrcc.com' }));
 
 const resend = new Resend(process.env.API_KEY_RESEND);
 
@@ -23,7 +23,7 @@ app.post('/send-email', async (req, res) => {
     // Using Resend to send email
     const response = await resend.emails.send({
       from: 'HRCC <noreply@construccioneshrcc.com>',
-      to: 'netcamara30@gmail.com',
+      to: 'hrcc.construcciones@gmail.com',
       subject: subject,
       html: `
       <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
